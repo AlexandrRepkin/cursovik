@@ -2,7 +2,15 @@
     font-size: 42px;
     line-height: 1.23;
     font-weight: 700;
+    color: white;
 }
+@mixin sub-title {
+    color: #ffffff;
+    font-size: 16px;
+    text-align: center;
+    line-height: 25px;
+}
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
 @import 'nullstyle.scss';
 body{
     height: 100%;
@@ -24,7 +32,7 @@ body{
     padding: 0 15px;
     box-sizing: content-box;
 }
-._ibg{
+.ibg{
     position: relative;
     img{
         position: absolute;
@@ -44,21 +52,6 @@ body{
     display: flex;
     flex-direction: column;
 }
-.content {
-
-}
-.showcase {
-
-}
-
-.showcase__text {
-}
-.title {
-}
-.sub-title {
-}
-.showcase__btn {
-}
 .showcase__screen{
     flex: 1 0 100%;
     position: relative;
@@ -70,6 +63,7 @@ body{
         left: 0;
     }
 }
+<<<<<<< HEAD
 
 .ibg {
 }
@@ -101,3 +95,41 @@ body{
 }
 .container {
 }
+=======
+.showcase__text {
+    margin: 0 auto;
+    width: 960px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    & .showcase__title{
+        @include title;
+        font-size: 72px;
+        line-height: 1.17;
+        margin-bottom: 39px;
+    }
+    & .showcase__sub-title {
+        @include title;
+        text-align: center;
+        opacity: 0.7;
+        font-size: 22px;
+        line-height: 1.55;
+        font-weight: 300;
+        margin-bottom: 75px;
+    }
+}
+.showcase__btn {
+    display: inline-block;
+    line-height: 60px;
+    color: #dc000e;
+    font-weight: 700;
+    border: 3px solid #dc000e;
+    text-align: center;
+    min-height: 60px;
+    font-size: 16px;
+    padding-left: 60px;
+    padding-right: 60px;
+}
+>>>>>>> dc7b1e861e8dc2161ab5a2e6d4bc88ca3973e797
