@@ -73,3 +73,31 @@ body{
 
 .ibg {
 }
+
+
+
+.invite {
+    position: relative;
+    // margin-top: inherit;
+    width: 100%;
+    height: 100%;
+    padding: 50px 0px;
+    color: white;
+    // bottom: 0;
+    z-index: 5;
+    background-color: black;
+    &__text {
+        text-align: center;
+    }
+
+    &__title {
+        @include title;
+    }
+
+    &__subtitle {
+        font-size: 22px;
+        line-height: 1.5;
+    }
+}
+.container {
+}
