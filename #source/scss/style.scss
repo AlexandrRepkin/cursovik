@@ -529,3 +529,74 @@ input:focus::placeholder {
     height: 1px;
     background-color:#656464;
 }
+
+.timetable {
+    // background-color:#a92929;
+    color:#000000;
+    &__title {
+        @include title;
+        color:#000000;
+        text-align: center;
+        margin-bottom: 40px;
+        @media (max-width: 375px) {
+            font-size: 38px;
+            margin-bottom: 20px;
+        }
+    }
+
+    &__subtitle {
+        @include sub-title;
+        color:#000000;
+        margin: 0px 200px;
+        margin-bottom: 40px;
+        @media (max-width: 767px) {
+            margin: 0px 50px;
+            margin-bottom: 60px;
+        }
+        @media (max-width: 425px) {
+            margin: 0px 0px 60px 0px;
+        }
+        @media (max-width: 375px) {
+            font-size: 22px;
+            margin: 0px 0px 40px 0px;
+        }
+    }
+
+    &__week {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.day {
+    width: 70%;
+    display: flex;
+    // justify-content: space-between;
+    margin-bottom: 30px;
+    &__name {
+        flex: 0 1 35%;
+        font-size: 24px;
+        line-height: 1.35;
+        font-weight: 700;
+    }
+
+    &__time {
+        flex: 0 1 65%;
+        font-size: 20px;
+        line-height: 1.55;
+        font-weight: 300;
+        @media (max-width: 425px) {
+            font-size: 16px;
+            width: 100%;
+        }
+    }
+    @media (max-width: 900px) {
+        flex-direction: column;
+    }
+}
+
+.today {
+    color:#a92929;
+}
