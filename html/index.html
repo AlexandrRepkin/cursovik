@@ -26,7 +26,7 @@
                     </div>
                 </div>
             </header>
-            <div class="showcase__screen">
+            <div class="showcase__screen" id="showcase__screen">
                 <div class="showcase__image ibg">
                     <img src="/img/bacground.jpg" alt="showcase">
                 </div>
@@ -36,6 +36,18 @@
                     <a href="#" class="showcase__btn">Записаться на первый урок</a>
                 </div>
             </div>
+            <!-- <div class="modal">
+                <div class="modal__dialog">
+                    <div class="modal__content">
+                        <form class="form">
+                            <input type="text">
+                            <input type="text">
+                            <textarea name="" id="" cols="30" rows="10"></textarea>
+                        </form>
+                        <div class="modal-close" data-close><p>&times;</p></div>
+                    </div>
+                </div>
+            </div> -->
             <div class="content">
                 <div class="invite">
                     <div class="container">
@@ -97,8 +109,7 @@
                 <div class="schedule">
                     <div class="schedule__container container">
                         <div class="schedule__label">Занятия проходят каждый день. Найдите подходящую группу и создайте для себя расписание.</div>
-                        <a href="#" class="schedule__btn">Расписание</a> 
-                        <!-- Якорь добавить -->
+                        <a href="#timetable" class="schedule__btn">Расписание</a> 
                     </div>
                 </div>
                 <div class="teachers">
@@ -181,7 +192,7 @@
                         <div class="line"></div>
                     </div>
                 </div>
-                <div class="timetable">
+                <div class="timetable" id="timetable">
                     <div class="container">
                         <div class="timetable__title">
                             Расписание
@@ -286,14 +297,23 @@
                                 </div>
                             </div>
                         </div>
-                        <a href="#" class="showcase__btn">Записаться на первый урок</a>
+                        <a href="#showcase__screen" class="showcase__btn">Записаться на первый урок</a>
                     </div>
                 </div>
-                <div class="video">
-                    dasdsa
+                <div class="competitions">
+                    <div class="competitions__container container">
+                        <div class="competitions__text">
+                            <div class="competitions__label">Соревнования</div>
+                            <h1 class="competitions__title title">Наши студенты Миша и Оля выиграли международный конкурс латиноамериканских танцев в Колумбии!</h1>
+                            <div class="sub-titile competitions__sub-title">Ежегодно мы участвуем в международных соревнованиях. В прошлом месяце наши танцоры выиграли золото в Колумбии, сделав нас первой русской школой-победительницей по латиноамериканским танцам!</div>
+                        </div>
+                        <div class="competitions__video video ibg">
+                            <iframe width="956" height="538" src="https://www.youtube.com/embed/OJpIpqtkRGA" title="Paso Doble I WDC World Professional Latin 2019" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                    </div>
                 </div>
                 <div class="questions">
-                    <div class="container">
+                    <div class="questions__container container">
                         <div class="questions__title">
                             Вопросы
                         </div>
@@ -383,9 +403,37 @@
                         </div>
                     </div>
                 </div>
+                <!-- !Сделать блок -->
+                <div class="reviews">
+                    <div class="container">
+
+                    </div>
+                </div>
+                <!-- !-->
+                <div class="adress">
+                    <div class="container">
+                        <div class="adress__row">
+                            <div class="adress__column">Школа латиноамериканских танцев
+                                1-ая Владимирская ул., 10
+                                Москва</div>
+                            <div class="adress__column adress-contacts">
+                                <a href="tel:87456268570" class="adress-contacts__link">8 (745) 62 685 70</a>
+                                <a href="tel:87454538170" class="adress-contacts__link">8 (745) 45 381 70</a>
+                                <a href="mailto:latin@dance.com" class="adress-contacts__link">latin@dance.com</a>
+                            </div>
+                            <div class="adress__column">Наша школа находится в центре города. Очень легко добраться на метро или трамвае. Также есть парковка.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="map">
+                    <div class="map__container">
+                        <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A49aec45ea57ff953327ea7cea992542dc9bf08b56ddc1daef74320398f38d279&amp;width=100%&amp;height=375&amp;lang=ru_RU&amp;scroll=true"></script>
+                    </div>
+                </div>
             </div>
             <footer class="footer">
-    dsadas
+                <div class="footer__title">PHOTO CREDITS</div>
+                <div class="footer__sub-title">Cecilia Heinen, amira_a</div>
             </footer>
         </div>
     </div>
