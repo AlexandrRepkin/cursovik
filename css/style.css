@@ -1057,6 +1057,7 @@ input:focus::placeholder {
   }
 }
 .day__time {
+  font-family: "PT Sans", sans-serif;
   -webkit-box-flex: 0;
       -ms-flex: 0 1 65%;
           flex: 0 1 65%;

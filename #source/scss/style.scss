@@ -588,6 +588,7 @@ input:focus::placeholder {
     }
 
     &__time {
+        font-family: 'PT Sans', sans-serif;
         flex: 0 1 65%;
         font-size: 20px;
         line-height: 1.55;
@@ -619,7 +620,6 @@ input:focus::placeholder {
 .price-row {
     display: flex;
     justify-content: space-between;
-    // margin-bottom: 50px;
     @media(max-width:1000px){margin: 0 0 50px;}
     margin: 0 20px 50px;
     &__col {
