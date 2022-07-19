@@ -29,7 +29,7 @@ $(document).ready(function() {
         ]
     });
     var today = new Date().getDay();
-    var day = $(`[data-day='${today}']`).addClass('today');
+    const day = $(`[data-day='${today}']`).addClass('today');
 });
 
 

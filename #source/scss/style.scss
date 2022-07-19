@@ -533,6 +533,7 @@ input:focus::placeholder {
 .timetable {
     // background-color:#a92929;
     color:#000000;
+    margin-bottom: 100px;
     &__title {
         @include title;
         color:#000000;
@@ -599,4 +600,78 @@ input:focus::placeholder {
 
 .today {
     color:#a92929;
+}
+
+.price {
+    background-color:#a92929;
+    color: white;
+    padding: 100px 0px;
+    &__title {
+        @include title;
+        text-align: center;
+        margin-bottom: 60px;
+    }
+}
+
+.price-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+    &__col {
+        text-align: center;
+        padding: 0px 30px;
+        display: flex;
+        flex-direction: column;
+        @media (max-width: 1000px) {
+            padding: 0;
+        }
+        @media (max-width: 730px) {
+            margin-bottom: 30px;
+        }
+    }
+    @media (max-width: 730px) {
+        flex-direction: column;
+    }
+}
+@media (max-width: 1000px) {
+    .price-row__col:nth-child(2) {
+        padding: 0px 20px;
+    }
+}
+.cost {
+    &__title {
+        padding: 15px 0px;
+        @include title;
+        font-size: 52px;
+        border-bottom: 0.5px solid white;
+        margin-bottom: 15px;
+        @media (max-width: 900px) {
+            font-size: 42px;
+        }
+    }
+
+    &__price {
+        @include sub-title;
+        font-weight: 300;
+        @media (max-width: 900px) {
+            font-size: 14px;
+        }
+    }
+
+    &__descr {
+        @include sub-title;
+        font-weight: 300;
+        @media (max-width: 900px) {
+            font-size: 14px;
+        }
+    }
+}
+.price .container a.showcase__btn {
+    display: block;
+    width: fit-content;
+    margin: 0 auto;
+    &:hover {
+        color:#a92929;
+        background-color: white;
+    }
 }
