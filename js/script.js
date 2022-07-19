@@ -6,6 +6,29 @@ burger.addEventListener('click', ()=>{
     menu.classList.toggle('active');
     document.body.classList.toggle('lock');
 });
+$(document).ready(function() {
+    $('.teachers-slider').slick({
+        arrows: true,
+        slidesToShow: 3,
+        infinity: true,
+        autoplay: true,
+        autoplaySpeed: 3000,
+        responsive: [
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 2,
+                }
+            },
+            {
+                breakpoint: 425,
+                settings: {
+                    slidesToShow: 1,
+                }
+            }
+        ]
+    });
+});
 //===============================================================================================//
 
 //=========================Анимация текста и картинок============================//
