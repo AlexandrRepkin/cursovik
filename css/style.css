@@ -1,4 +1,3 @@
-@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap");
 * {
   padding: 0;
@@ -71,51 +70,6 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: inherit;
 }
 
-/* Слайдер */
-/* Слайдер запущен */
-/* Слайдер с точками */
-/* Ограничивающая оболочка */
-.slick-list {
-  overflow: hidden;
-}
-
-/* Лента слайдов */
-.slick-track {
-  display: flex;
-}
-
-/* Слайд */
-/* Слайд активный (показывается) */
-/* Слайд основной */
-/* Слайд по центру */
-/* Клонированный слайд */
-/* Стрелка */
-.slick-arrow {
-  position: absolute;
-  top: 50%;
-  z-index: 10;
-  font-size: 0;
-  height: 32px;
-  width: 32px;
-}
-
-/* Стрелка влево */
-.slick-arrow.slick-prev {
-  left: 0;
-  background: url("../../img/slider/right.png") 0 0/100% no-repeat;
-  transform: rotate(180deg);
-}
-
-/* Стрелка вправо */
-.slick-arrow.slick-next {
-  right: 0;
-  background: url("../../img/slider/right.png") 0 0/100% no-repeat;
-}
-
-/* Стрелка не активная */
-/* Точки (булиты) */
-/* Активная точка */
-/* Элемент точки */
 body {
   height: 100%;
   font-family: "Montserrat", sans-serif;
@@ -710,6 +664,35 @@ input:focus::placeholder {
   }
 }
 .schedule__btn {
+  box-shadow: 0 0 10px 2px #4c4b4b;
+  flex: 0 0 260px;
+  margin-left: 40px;
+  display: inline-block;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #000000;
+  border: 0px solid #ffffff;
+  background-color: #ffffff;
+  min-height: 60px;
+  font-size: 16px;
+  padding-left: 60px;
+  padding-right: 60px;
+  transition: all ease 0.8s;
+}
+@media (max-width: 968px) {
+  .schedule__btn {
+    max-width: 260px;
+    flex: 0 0 60px;
+    margin-left: 0;
+  }
+}
+.schedule__btn:hover {
+  background-color: #c9c9c9;
+  transform: scale(0.98);
+  transition: all ease 0.8s;
+}edule__btn {
   box-shadow: 0 0 10px 2px #4c4b4b;
   flex: 0 0 260px;
   margin-left: 40px;
