@@ -1,8 +1,18 @@
+//=============================================Миксины=========================================//
 @mixin title {
     font-size: 42px;
     line-height: 1.23;
     font-weight: 700;
     color: white;
+    &.anim-items{
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    &.anim-items.active{
+        transition: all ease 1.2s;
+        transform: translateY(0%);
+        opacity: 1;
+    }
 }
 @mixin sub-title {
     color: #ffffff;
@@ -10,10 +20,47 @@
     text-align: center;
     line-height: 25px;
 }
+//==============================================================================================//
+//======================================Анимация================================================//
+@keyframes animationForm {
+    0% {transform: scale(0);}
+    50% {transform: scale(1.1);}
+    100% {transform: scale(1);}
+}
+.label{
+    &.anim-items{
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    &.anim-items.active{
+        transition: all ease 1.2s 0.2s;
+        transform: translateY(0%);
+        opacity: 1;
+    }
+}
+.anim-column.anim-items{
+    transform: scale(0); 
+}
+.anim-column.anim-items.active:first-child{
+    transition: all ease 1.2s;
+    transform: scale(1);
+}
+.anim-column.anim-items.active:nth-child(2){
+    transition: all ease 1.2s 0.2s;
+    transform: scale(1); 
+}
+.anim-column.anim-items.active:last-child{
+    transition: all ease 1.2s 0.4s;
+    transform: scale(1);
+}
+//===============================================================================================//
+//=======================================Шрифты==================================================//
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
+//===================================Обнуляющий стиль и слайдер================================================//
 @import 'nullstyle.scss';
 @import '_slider.scss';
+//===============================================================================================//
 body{
     height: 100%;
     font-family: 'Montserrat', sans-serif;
@@ -49,6 +96,7 @@ body.lock{overflow: hidden;}
 input:focus::placeholder {
     color: transparent;
 }
+//======================================Header===================================================//
 .header {
     @media(max-width:767px){position:relative;background-color: black;}
     position: absolute;
@@ -172,6 +220,7 @@ input:focus::placeholder {
         }
     }
 }
+//===============================================================================================//
 .main{
     position: absolute;
     width: 100%;
@@ -181,22 +230,75 @@ input:focus::placeholder {
     display: flex;
     flex-direction: column;
 }
-.showcase__screen{
+//=====================================Showcase============================================//
+.showcase{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     flex: 1 0 100%;
     position: relative;
-    .showcase__image {
+    &__image {
         position:absolute;
         width: 100%;
         height: 100%;
         top: 0;
         left: 0;
     }
+    &__text {
+        z-index: 4;
+        margin: auto auto;
+        @media (max-width:1024px){width: 800px;}
+        @media (max-width:876px){width: 100%; padding: 0 30px; justify-content: flex-end; padding: 100px 15px;}
+        width: 960px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        & .showcase__title{
+            @media (max-width:876px){font-size: 52px; margin-bottom: 20px;}
+            @media(max-width:600px){font-size:36px;}
+            @include title;
+            font-size: 72px;
+            line-height: 1.17;
+            margin-bottom: 39px;
+        }
+        & .showcase__sub-title {
+            @media (max-width:876px){margin-bottom: 50px;}
+            @media(max-width:600px){font-size:18px;}
+            @include title;
+            text-align: center;
+            opacity: 0.7;
+            font-size: 22px;
+            line-height: 1.55;
+            font-weight: 300;
+            margin-bottom: 75px;
+        }
+    }
+    &__btn {
+        @media(max-width:400px){font-size: 14px; padding: 0 20px; line-height: calc(60 / 14 * 100%);}
+        animation: animationForm 1.2s;
+        display: inline-block;
+        line-height: 60px;
+        color: #ffffff;
+        font-weight: 700;
+        border: 3px solid #ffffff;
+        text-align: center;
+        min-height: 60px;
+        font-size: 16px;
+        padding-left: 60px;
+        padding-right: 60px;
+        transition: all ease 0.5s;
+        &:hover{
+            border: 3px solid #a92929;
+            color: #a92929;
+            transition: all ease 0.5s;
+        }
+    }
+
 }
-.showcase__screen::after{
+.showcase::after{
     content: '';
     position: absolute;
     bottom: 0;
@@ -207,7 +309,7 @@ input:focus::placeholder {
     opacity: 0.4;
 }
 .content{position: relative;}
-.showcase__screen::before {
+.showcase::before {
     content: '';
     position: absolute;
     width: 100%;
@@ -217,6 +319,8 @@ input:focus::placeholder {
     z-index: 3;
     background:linear-gradient(to top, #000000, transparent);
 }
+//===============================================================================================//
+//=====================================Invite==================================================//
 .invite {
     @media (max-width:800px){padding: 40px 0 80px 0;}
     position: relative;
@@ -233,11 +337,29 @@ input:focus::placeholder {
             font-size: 30px;
         }
         @include title;
+        &.anim-items{
+            transform: translateX(-100%);
+            opacity: 0;
+        }
+        &.anim-items.active{
+            transition: all ease 1.2s;
+            transform: translateX(0%);
+            opacity: 1;
+        }
         font-size: 64px;
         line-height: 1.23;
         margin-bottom: 41px;
     }
     &__subtitle {
+        &.anim-items{
+            transform: translateX(-100%);
+            opacity: 0;
+        }
+        &.anim-items.active{
+            transition: all ease 1.2s 0.5s;
+            transform: translateX(0%);
+            opacity: 1;
+        }
         @media (max-width:800px){font-size: 20px;}
         font-size: 22px;
         line-height: 1.5;
@@ -251,6 +373,7 @@ input:focus::placeholder {
         }
     }
     &__form{
+        &.anim-items.active{animation: animationForm 1.2s;}
         @media(max-width:767px){
             display: block;
         }
@@ -301,56 +424,8 @@ input:focus::placeholder {
         transition: all ease 0.8s;
     }
 }
-.showcase__text {
-    z-index: 4;
-    margin: auto auto;
-    @media (max-width:1024px){width: 800px;}
-    @media (max-width:876px){width: 100%; padding: 0 30px; justify-content: flex-end; padding: 100px 15px;}
-    width: 960px;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    & .showcase__title{
-        @media (max-width:876px){font-size: 52px; margin-bottom: 20px;}
-        @media(max-width:600px){font-size:36px;}
-        @include title;
-        font-size: 72px;
-        line-height: 1.17;
-        margin-bottom: 39px;
-    }
-    & .showcase__sub-title {
-        @media (max-width:876px){margin-bottom: 50px;}
-        @media(max-width:600px){font-size:18px;}
-        @include title;
-        text-align: center;
-        opacity: 0.7;
-        font-size: 22px;
-        line-height: 1.55;
-        font-weight: 300;
-        margin-bottom: 75px;
-    }
-}
-.showcase__btn {
-    @media(max-width:400px){font-size: 14px; padding: 0 20px; line-height: calc(60 / 14 * 100%);}
-    display: inline-block;
-    line-height: 60px;
-    color: #ffffff;
-    font-weight: 700;
-    border: 3px solid #ffffff;
-    text-align: center;
-    min-height: 60px;
-    font-size: 16px;
-    padding-left: 60px;
-    padding-right: 60px;
-    transition: all ease 0.5s;
-}
-.showcase__btn:hover{
-    border: 3px solid #a92929;
-    color: #a92929;
-    transition: all ease 0.5s;
-}
+//===============================================================================================//
+//=====================================types-of-dance==================================================//
 .types-of-dance {
     padding-bottom: 30px;
     background-color: black;
@@ -373,7 +448,24 @@ input:focus::placeholder {
         & .item__column:first-child{order: 2;}
         & .item__column:last-child{order: 1;}
     }
-    background-color: #a92929;
+    &__column:nth-child(odd){
+        &.anim-items{
+            transform: scale(0);
+        }
+        &.anim-items.active{
+            transition: all ease 1.2s;
+            transform: scale(1);
+        }
+    }
+    &__column:nth-child(even){
+        &.anim-items{
+            background-color: #000000;
+        }
+        &.anim-items.active{
+            background-color: #a92929;
+            transition: all ease 0.8s 0.8s;
+        }
+    }
     &__column{
         flex: 0 1 50%;
         display: flex;
@@ -409,6 +501,8 @@ input:focus::placeholder {
         opacity: 0.70;
     }
 }
+//=======================================================================================//
+//=====================================schedule==================================================//
 .schedule {
     background-color: #000000;
     &__container{
@@ -452,7 +546,8 @@ input:focus::placeholder {
         transition: all ease 0.8s;
     }
 }
-
+//=======================================================================================//
+//=====================================teachers==================================================//
 .teachers {
     @media (max-width:600px){
         padding: 60px 0px;
@@ -533,7 +628,8 @@ input:focus::placeholder {
     height: 1px;
     background-color:#656464;
 }
-
+//=======================================================================================//
+//=====================================timetable==================================================//
 .timetable {
     color:#000000;
     @media (max-width:600px){ margin-bottom: 60px}
@@ -580,6 +676,15 @@ input:focus::placeholder {
     display: flex;
     margin-bottom: 30px;
     &__name {
+        &.anim-items{
+            transform: translateX(-100%);
+            opacity: 0;
+        }
+        &.anim-items.active{
+            transition: all ease 1.2s 0.6s;
+            transform: translateX(0%);
+            opacity: 1;
+        }
         @media (max-width: 990px){
             margin-bottom: 10px;
         }
@@ -590,6 +695,27 @@ input:focus::placeholder {
     }
 
     &__time {
+        li{
+            &.anim-items{
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            &.anim-items.active:first-child{
+                transition: all ease 1.2s;
+                transform: translateX(0%);
+                opacity: 1;
+            }
+            &.anim-items.active:nth-child(2){
+                transition: all ease 1.2s 0.1s;
+                transform: translateX(0%);
+                opacity: 1;
+            }
+            &.anim-items.active:last-child{
+                transition: all ease 1.2s 0.2s;
+                transform: translateX(0%);
+                opacity: 1;
+            }
+        }
         font-family: 'PT Sans', sans-serif;
         flex: 0 1 65%;
         font-size: 20px;
@@ -607,7 +733,8 @@ input:focus::placeholder {
 .today {
     color:#a92929;
 }
-
+//=======================================================================================//
+//=====================================price==================================================//
 .price {
     background-color:#a92929;
     color: white;
@@ -688,7 +815,8 @@ input:focus::placeholder {
         background-color: white;
     }
 }
-
+//=======================================================================================//
+//=====================================questions==================================================//
 .questions {
     background-color: black;
     color:#ffffff;
@@ -767,6 +895,8 @@ input:focus::placeholder {
         font-size: 14px;
     }
 }
+//=======================================================================================//
+//=====================================competitions==================================================//
 .competitions {
     padding: 135px 0 105px 0;
     @media (max-width:600px){
@@ -826,6 +956,8 @@ input:focus::placeholder {
         }
     }
 }
+//=======================================================================================//
+//=====================================adress==================================================//
 .adress {
     background-color: #a92929;
     padding: 90px 0;
@@ -857,6 +989,8 @@ input:focus::placeholder {
         color: inherit;
     }
 }
+//=======================================================================================//
+//=====================================footer==================================================//
 .footer {
     background-color: #000000;
     padding: 60px 0px;
@@ -877,8 +1011,8 @@ input:focus::placeholder {
         margin-bottom: 20px;
     }
 }
-
-
+//=======================================================================================//
+//=====================================reviews==================================================//
 .reviews {
     padding: 100px 0px;
     &-slider {
@@ -949,3 +1083,4 @@ input:focus::placeholder {
         }
     }
 }
+//=======================================================================================//
