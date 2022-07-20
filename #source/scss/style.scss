@@ -624,8 +624,9 @@ input:focus::placeholder {
 .price-row {
     display: flex;
     justify-content: space-between;
-    @media(max-width:1000px){margin: 0 0 50px;}
-    margin: 0 20px 50px;
+    // @media(max-width:1000px){margin: 0 0 50px;}
+    // margin: 0 20px 50px;
+    margin-bottom: 50px;
     &__col {
         text-align: center;
         flex: 0 0 33.333%;
@@ -644,11 +645,11 @@ input:focus::placeholder {
         flex-direction: column;
     }
 }
-@media (max-width: 1000px) {
-    .price-row__col:nth-child(2) {
-        padding: 0px 20px;
-    }
-}
+// @media (max-width: 1000px) {
+//     .price-row__col:nth-child(2) {
+//         padding: 0px 20px;
+//     }
+// }
 .cost {
     &__title {
         padding: 15px 0px;
@@ -712,12 +713,13 @@ input:focus::placeholder {
         margin-bottom: 30px;
         @media (max-width: 1100px) {
             flex-direction: column;
-            width: 80%;
+            // width: 80%;
+            width: 100%;
             margin: 0 auto;
         }
-        @media (max-width: 500px) {
-            width: 100%;
-        }
+        // @media (max-width: 500px) {
+        //     width: 100%;
+        // }
     }
 
     &__item {

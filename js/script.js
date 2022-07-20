@@ -19,7 +19,7 @@ $(document).ready(function() {
         autoplaySpeed: 3000,
         responsive: [
             {
-                breakpoint: 768,
+                breakpoint: 990,
                 settings: {
                     slidesToShow: 2,
                 }
@@ -41,8 +41,9 @@ $(document).ready(function() {
         adaptiveHeight: true,
         responsive: [
             {
-                breakpoint: 425,
+                breakpoint: 600,
                 settings: {
+                    autoplay:true,
                     arrows: false,
                 }
             }
