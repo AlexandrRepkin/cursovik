@@ -44,7 +44,6 @@ $(document).ready(function() {
             {
                 breakpoint: 600,
                 settings: {
-                    autoplay:true,
                     arrows: false,
                 }
             }
