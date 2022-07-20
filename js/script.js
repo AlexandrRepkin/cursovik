@@ -32,6 +32,22 @@ $(document).ready(function() {
             }
         ]
     });
+    $('.reviews-slider').slick({
+        arrows: true,
+        slidesToShow: 1,
+        infinity: true,
+        dots: true,
+        // centerMode: true,
+        adaptiveHeight: true,
+        responsive: [
+            {
+                breakpoint: 425,
+                settings: {
+                    arrows: false,
+                }
+            }
+        ]
+    });
 //===============================================================================================//
 
 //=========================Выделение текущего расписание============================//
