@@ -42,7 +42,7 @@ $(document).ready(function() {
         adaptiveHeight: true,
         responsive: [
             {
-                breakpoint: 600,
+                breakpoint: 675,
                 settings: {
                     arrows: false,
                 }

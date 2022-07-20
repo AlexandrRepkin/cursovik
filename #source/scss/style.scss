@@ -1055,9 +1055,8 @@ input:focus::placeholder {
         color: black;
         text-align: center;
         margin-bottom: 50px;
-        min-height: 24px;
         @media (max-width:500px) {
-            font-size: 24px;
+            font-size: 25px;
         }
     }
     @media (max-width: 600px) {
@@ -1106,9 +1105,8 @@ input:focus::placeholder {
         line-height: 1.35;
         font-weight: 700;
         margin-bottom: 5px;
-        min-height: 24px;
         @media (max-width: 500px) {
-            font-size: 36px;
+            font-size: 18px;
         }
     }
     &__prof {
